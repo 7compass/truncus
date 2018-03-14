@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://trunc.us/X6tqvC.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Mar 2018 19:08:41 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      Http-Referer:
+      - http://trunc.us/X6tqvC
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"0bd16152e3088041962a7c244e0add58"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 74f69b0a5df347f56664353686c0487a
+      X-Runtime:
+      - '0.003660'
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 4.0.2
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding,User-Agent
+      Content-Length:
+      - '73'
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: ASCII-8BIT
+      string: '{"trunct":{"token":"X6tqvC","url":"http://google.com"}}'
+    http_version: 
+  recorded_at: Wed, 14 Mar 2018 19:08:41 GMT
+recorded_with: VCR 3.0.3
