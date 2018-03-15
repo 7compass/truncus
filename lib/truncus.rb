@@ -44,8 +44,8 @@ module Truncus
 
     # Shortens a URL, returns the shortened token
     def get_token(url)
-      req      = Net::HTTP::Post.new('/', initheader = {'Content-Type': 'application/json'})
-      req.body = {'url': url, 'format': 'json'}.to_json
+      req      = Net::HTTP::Post.new('/', initheader = {'Content-Type' => 'application/json'})
+      req.body = {url: url, format: 'json'}.to_json
 
       res = @http.request(req)
       data = JSON::parse(res.body)
