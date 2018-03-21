@@ -20,25 +20,23 @@ module Truncus
 
     # Convenience for instantiating a Client and retrieving a shortened url
     def self.expand_token(token)
-      @client ||= new
-      @client.expand_token(token)
+      new.expand_token(token)
     end
 
 
     # Convenience for instantiating a Client, shortening a url,
     # and returning the shortened token
     def self.get_token(url)
-      @client ||= new
-      @client.get_token(url)
+      new.get_token(url)
     end
 
 
     # Convenience for instantiating a Client, shortening a url,
     # and returning it as a full url to the shortened version.
     def self.get_url(url)
-      @client ||= new
-      token = @client.get_token(url)
-      "http#{'s' if @client.use_ssl?}://#{@client.host}/#{token}"
+      client = new
+      token = client.get_token(url)
+      "http#{'s' if client.use_ssl?}://#{client.host}/#{token}"
     end
 
 
