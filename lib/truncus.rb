@@ -5,7 +5,6 @@ require 'net/http'
 
 
 module Truncus
-
   class Client
     attr_accessor :host, :port
 
@@ -15,6 +14,7 @@ module Truncus
 
       @http ||= Net::HTTP.new(host, port)
       @http.use_ssl = use_ssl?
+      @http.verify_mode = options[:ssl_verify_mode] if options[:ssl_verify_mode]
     end
 
 
@@ -34,9 +34,13 @@ module Truncus
     # Convenience for instantiating a Client, shortening a url,
     # and returning it as a full url to the shortened version.
     def self.get_url(url)
-      client = new
-      token = client.get_token(url)
-      "http#{'s' if client.use_ssl?}://#{client.host}/#{token}"
+      new.get_url(url)
+    end
+
+
+    def get_url(url)
+      token = get_token(url)
+      "http#{'s' if use_ssl?}://#{host}/#{token}"
     end
 
 
@@ -65,8 +69,5 @@ module Truncus
     def use_ssl?
       port.to_i == 443
     end
-
   end
-
-
 end

@@ -1,21 +1,21 @@
 PATH
   remote: .
   specs:
-    truncus (0.2.0)
-      json
+    truncus (0.2.2)
+      json (~> 2.1.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.5.2)
-      public_suffix (>= 2.0.2, < 4.0)
+    addressable (2.8.0)
+      public_suffix (>= 2.0.2, < 5.0)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     diff-lcs (1.3)
     hashdiff (0.3.7)
     json (2.1.0)
     public_suffix (2.0.5)
-    rake (10.5.0)
+    rake (12.3.3)
     rspec (3.7.0)
       rspec-core (~> 3.7.0)
       rspec-expectations (~> 3.7.0)
@@ -42,11 +42,11 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.14)
   public_suffix (~> 2.0)
-  rake (~> 10.0)
+  rake (~> 12.3.3)
   rspec (~> 3.0)
   truncus!
   vcr (~> 3.0)
   webmock (~> 3.0)
 
 BUNDLED WITH
-   1.16.1
+   1.17.3
