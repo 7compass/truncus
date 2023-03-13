@@ -48,10 +48,9 @@ module Truncus
     def get_token(url)
       req      = Net::HTTP::Post.new('/', initheader = {'Content-Type' => 'application/json'})
       req.body = {url: url, format: 'json'}.to_json
-
       res = @http.request(req)
       data = JSON::parse(res.body)
-      data['trunct']['token']
+      data['token']
     end
 
 
@@ -61,7 +60,7 @@ module Truncus
       req = Net::HTTP::Get.new(url.path)
       res = @http.request(req)
       data = JSON::parse(res.body)
-      data['trunct']['url']
+      data['url']
     end
 
 
