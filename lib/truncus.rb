@@ -50,7 +50,7 @@ module Truncus
       req.body = {url: url, format: 'json'}.to_json
       res = @http.request(req)
       data = JSON::parse(res.body)
-      data['token']
+      data['trunct']['token']
     end
 
 
@@ -60,7 +60,7 @@ module Truncus
       req = Net::HTTP::Get.new(url.path)
       res = @http.request(req)
       data = JSON::parse(res.body)
-      data['url']
+      data['trunct']['url']
     end
 
 
